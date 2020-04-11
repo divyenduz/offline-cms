@@ -6,9 +6,9 @@ import path from 'path'
 import { JSDOM } from 'jsdom'
 import prettier from 'prettier'
 
-const workingDirectory = `/Users/divyendusingh/Documents/zoid/likecsdegree.com`
+const workingDirectory = process.cwd()
 
-export default (req, res) => {
+export default async (req, res) => {
   if (req.method === 'POST') {
     const { name, content, isBody } = req.body
     const filePath = path.join(workingDirectory, name)

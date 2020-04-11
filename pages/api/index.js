@@ -3,24 +3,25 @@
 import fs from 'fs'
 import path from 'path'
 
-const workingDirectory = `/Users/divyendusingh/Documents/zoid/likecsdegree.com`
+import glob from 'glob'
 
-export default (req, res) => {
+const workingDirectory = process.cwd()
+
+export default async (req, res) => {
   res.statusCode = 200
   res.setHeader('Content-Type', 'application/json')
 
-  const files = fs
-    .readdirSync(workingDirectory)
-    .filter((f) => f.endsWith('.html')) // TODO: Sub-folder support
-    .filter((f) => {
-      const filePath = path.join(workingDirectory, f)
-      return !fs.statSync(filePath).isDirectory()
+  // TODO: Don't get all files' content in one go
+  const files = glob
+    .sync('**/*.html', {
+      ignore: 'node_modules/**',
     })
+    // TODO: This sort migth be expensive
+    .sort((a, b) => a.split('/').length - b.split('/').length)
     .map((f) => {
-      const filePath = path.join(workingDirectory, f)
       return {
         name: f,
-        content: fs.readFileSync(filePath, 'utf8'),
+        content: fs.readFileSync(f, 'utf8'),
       }
     })
   res.status(200).json({ files })
