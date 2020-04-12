@@ -33,3 +33,7 @@ All contributions (code, docs, issue creation) are welcomed 🙏
 # References
 
 1. https://github.com/ericclemmons/codelift
+
+# License 
+
+MIT
