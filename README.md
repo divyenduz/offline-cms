@@ -2,6 +2,10 @@
   <img width="100" height="100" src="https://user-images.githubusercontent.com/746482/79071031-f4dacb00-7cf6-11ea-98c2-cfe36b280a44.png">
 </p>
 
+<p align="center">
+  (logo by http://yuvika.in/)
+</p>
+
 # Introduction
 
 `offline-cms` is a "No Code" WYSIWYG HTML editor that writes directly to the filesystem. This of it as a visual static side generator (editor for now).
