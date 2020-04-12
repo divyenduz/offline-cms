@@ -23,6 +23,13 @@ export default function Index() {
     const data = await r.json()
     setFiles(data.files)
 
+    if (selectedFileName) {
+      const chosenFile = data.files.find((f) => f.name === selectedFileName)
+      setSelectedFileName(chosenFile.name)
+      setChosenFile(chosenFile)
+      return
+    }
+
     // TODO: Handle case when there are 0 html files
     const chosenFile = data.files[0]
     setSelectedFileName(chosenFile.name)
@@ -65,8 +72,6 @@ export default function Index() {
           }}
           onChange={(item) => {
             //@ts-ignore
-            console.log(`ZEBRA`, item.value)
-            //@ts-ignore
             setSelectedFileName(item.value)
             //@ts-ignore
             const file = files.find((f) => f.name === item.value)
@@ -76,19 +81,34 @@ export default function Index() {
       )}
 
       <div className={'workspace-root'}>
-        <Editor
-          selectedEditor={selectedEditor}
-          dirtyContent={dirtyContent}
-          setDirtyContent={setDirtyContent}
-        />
+        <div
+          style={{
+            width: '50%',
+          }}
+        >
+          <Editor
+            selectedEditor={selectedEditor}
+            dirtyContent={dirtyContent}
+            setDirtyContent={setDirtyContent}
+          />
+        </div>
 
         <div style={{ borderRight: '1px solid #ccc' }}></div>
 
-        <Preview previewMode={previewMode} dirtyContent={dirtyContent} />
+        <div
+          style={{
+            width: '50%',
+          }}
+        >
+          <Preview previewMode={previewMode} dirtyContent={dirtyContent} />
+        </div>
       </div>
       <style jsx>{`
         .workspace-root {
           display: flex;
+          height: 100vh;
+          width: 100vw;
+          justify-content: space-between;
         }
       `}</style>
     </div>

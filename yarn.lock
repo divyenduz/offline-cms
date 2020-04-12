@@ -938,26 +938,6 @@
   resolved "https://registry.yarnpkg.com/@ckeditor/ckeditor5-build-balloon-block/-/ckeditor5-build-balloon-block-18.0.0.tgz#140b76ed86902e653f03e4f5c037b0a415f6a494"
   integrity sha512-bwu+RX0M1qTMZAV7l6NCbs+u87C+dhr+ZyuqopbYhuujBlJlAB2D93EMHn4Pz4NYkYRIAs8lpYknChA0XsRijQ==
 
-"@ckeditor/ckeditor5-build-balloon@18.0.0":
-  version "18.0.0"
-  resolved "https://registry.yarnpkg.com/@ckeditor/ckeditor5-build-balloon/-/ckeditor5-build-balloon-18.0.0.tgz#c8e501e5c37c8761b21867ae44b24312c968d9ee"
-  integrity sha512-0LY+dlCFeWvbBTrW5pmHFdcK9XsuBuau+22YZw7Tmk9CaMUICzpHjPuT++zXROGYcW8EL6CsgDIEIWC1XzxA1w==
-
-"@ckeditor/ckeditor5-build-classic@18.0.0":
-  version "18.0.0"
-  resolved "https://registry.yarnpkg.com/@ckeditor/ckeditor5-build-classic/-/ckeditor5-build-classic-18.0.0.tgz#751a475bb14bcadcf6fc6285c979bccd1cb40883"
-  integrity sha512-7nyaDU5sUSl+7wXPwr0d5bOlO2e0LRQh2iJJCJfAjjuUESwtiBGoFC+Ql5dEht0xlfARoSWQMlkUvGuHOVja7A==
-
-"@ckeditor/ckeditor5-build-decoupled-document@18.0.0":
-  version "18.0.0"
-  resolved "https://registry.yarnpkg.com/@ckeditor/ckeditor5-build-decoupled-document/-/ckeditor5-build-decoupled-document-18.0.0.tgz#b716e5e3ee4423292acb985e77847000fc87a067"
-  integrity sha512-nzwxH0Zy8MOCWdH5pdrDLZCJKWSwmJj1RvL6X4U/Rrp//ajuoVlL8nFuPMzFnw6XdcNl2xzhCL8aREIxJQfIlQ==
-
-"@ckeditor/ckeditor5-build-inline@18.0.0":
-  version "18.0.0"
-  resolved "https://registry.yarnpkg.com/@ckeditor/ckeditor5-build-inline/-/ckeditor5-build-inline-18.0.0.tgz#b5561975fbf84774c454bb4e50969f87007cc6e8"
-  integrity sha512-95ibetASRmpOgG8o0bC4H2PFq4sgcBfnSOj5uQ/riAZ3yET8geIW1j2VWQnMCqg2yQGkp9XelhnTSvEcd7iZqg==
-
 "@ckeditor/ckeditor5-react@2.1.0":
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/@ckeditor/ckeditor5-react/-/ckeditor5-react-2.1.0.tgz#f612546a5a328899a436d71b72ffd632600049e8"

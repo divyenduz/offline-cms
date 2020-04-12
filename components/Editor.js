@@ -18,8 +18,8 @@ export default function Editor({
       CKEditor: require('@ckeditor/ckeditor5-react'),
       // ClassicEditor: require('@ckeditor/ckeditor5-build-classic'),
       // ClassicEditor: require('@ckeditor/ckeditor5-build-inline'),
-      ClassicEditor: require('@ckeditor/ckeditor5-build-balloon'),
-      // ClassicEditor: require('@ckeditor/ckeditor5-build-balloon-block'),
+      // ClassicEditor: require('@ckeditor/ckeditor5-build-balloon'),
+      ClassicEditor: require('@ckeditor/ckeditor5-build-balloon-block'),
       // ClassicEditor: require('@ckeditor/ckeditor5-build-decoupled-document'),
     }
     setEditorLoaded(true)
@@ -31,31 +31,30 @@ export default function Editor({
 
   if (selectedEditor === 'visual') {
     return (
-      <CKEditor
-        editor={ClassicEditor}
-        data={dirtyContent}
-        config={{
-          paragraph: {
-            paragraphLikeElements: ['article'],
-          },
-          heading: {
-            options: [
-              ...[1, 2, 3, 4, 5, 6].map((n) => {
-                return {
-                  model: `heading${n}`,
-                  view: `h${n}`,
-                  title: `Heading ${n}`,
-                  class: `ck-heading_heading${n}`,
-                }
-              }),
-            ],
-          },
-        }}
-        onChange={(event, editor) => {
-          const data = editor.getData()
-          setDirtyContent(data)
-        }}
-      />
+      <div width="100%" height="100vh">
+        <CKEditor
+          editor={ClassicEditor}
+          data={dirtyContent}
+          config={{
+            heading: {
+              options: [
+                ...[1, 2, 3, 4, 5, 6].map((n) => {
+                  return {
+                    model: `heading${n}`,
+                    view: `h${n}`,
+                    title: `Heading ${n}`,
+                    class: `ck-heading_heading${n}`,
+                  }
+                }),
+              ],
+            },
+          }}
+          onChange={(event, editor) => {
+            const data = editor.getData()
+            setDirtyContent(data)
+          }}
+        />
+      </div>
     )
   } else if (selectedEditor === 'code') {
     // Maybe implement code editor?
