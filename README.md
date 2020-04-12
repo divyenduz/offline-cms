@@ -18,6 +18,10 @@
 1. `cd examples/todo`
 1. `npx offline-cms`
 
+## Video
+
+[![offline-cms demo](https://img.youtube.com/vi/j4AXuT6GZHo/0.jpg)](https://www.youtube.com/watch?v=j4AXuT6GZHo)
+
 # Contribute
 
 All contributions (code, docs, issue creation) are welcomed 🙏
