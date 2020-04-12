@@ -8,7 +8,7 @@
 
 # Introduction
 
-`offline-cms` is a "No Code" WYSIWYG HTML editor that writes directly to the filesystem. This of it as a visual static side generator (editor for now).
+`offline-cms` is a "No Code" WYSIWYG HTML editor that writes directly to the filesystem. Think of it as a visual static side generator (editor for now).
 
 # Usage
 
