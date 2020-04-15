@@ -10,6 +10,8 @@
 
 `offline-cms` is a "No Code" WYSIWYG HTML editor that writes directly to the filesystem. Think of it as a visual static side generator (editor for now).
 
+[Launch tweet](https://twitter.com/divyenduz/status/1249349404395331587)
+
 # Usage
 
 1. Navigate into an HTML project directory
