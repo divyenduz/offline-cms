@@ -1,4 +1,5 @@
 // TODO: Explore other editors https://github.com/JefMari/awesome-wysiwyg#for-react
+// TODO: Fix missing content issue https://ckeditor.com/docs/ckeditor5/latest/builds/guides/faq.html
 import React, { useState, useEffect, useRef } from 'react'
 
 export default function Editor({
@@ -12,6 +13,7 @@ export default function Editor({
   //@ts-ignore
   const { CKEditor, ClassicEditor } = editorRef.current || {}
 
+  // TODO: Replace this useEffect with a custom hook https://gist.github.com/arcdev1/aba0fcea9f618de42ca399e3266f42aa
   useEffect(() => {
     //@ts-ignore
     editorRef.current = {
