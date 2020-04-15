@@ -10,7 +10,7 @@ export default function Index() {
   const [revision, setRevision] = useState(0)
 
   // TODO: This hardcoded default bites
-  const [selectedFileName, setSelectedFileName] = useState('index.html')
+  const [selectedFileName, setSelectedFileName] = useState(null)
   const [chosenFile, setChosenFile] = useState(null)
 
   const [dirtyContent, setDirtyContent] = useState('')
