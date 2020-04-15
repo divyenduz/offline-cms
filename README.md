@@ -39,6 +39,7 @@ All contributions (code, docs, issue creation) are welcomed 🙏
 # References
 
 1. https://github.com/ericclemmons/codelift
+1. https://divjoy.com/
 
 # License 
 
