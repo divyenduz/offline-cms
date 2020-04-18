@@ -1,6 +1,6 @@
 {
   "name": "offline-cms",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "main": "app.js",
   "bin": {
     "offline-cms": "app.js"
