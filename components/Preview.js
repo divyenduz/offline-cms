@@ -9,8 +9,6 @@ export default function Preview({ previewMode, dirtyContent }) {
         <style jsx>
           {`
             .preview-container {
-              width: 100%;
-
               /* body */
               padding-left: 50px;
               padding-right: 50px;

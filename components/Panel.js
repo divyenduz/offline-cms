@@ -59,7 +59,6 @@ export default function Panel({
             editFile({
               name: chosenFile.name,
               content: dirtyContent,
-              isBody: true, // TODO: Since we have hardcoded to visual editor for now
             })
           }}
         >

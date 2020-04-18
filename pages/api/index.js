@@ -23,7 +23,7 @@ export default async (req, res) => {
   }
 
   const ignoreGlob = ignoresFromGitIgnore.map((i) => i + '**')
-  console.log({ ignoreGlob })
+
   // TODO: Don't get all files' content in one go
   const files = glob
     .sync('**/*.html', {
