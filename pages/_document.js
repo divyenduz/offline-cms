@@ -9,9 +9,7 @@ export default class _Document extends Document {
   render() {
     return (
       <Html>
-        <Head>
-          <link href="/static/style.css" rel="stylesheet" />
-        </Head>
+        <Head>{/* <link href="/static/style.css" rel="stylesheet" /> */}</Head>
         <body>
           <Main />
           <NextScript />

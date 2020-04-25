@@ -41,7 +41,9 @@ export default function Index() {
   }, [revision])
 
   useEffect(() => {
-    setDirtyContent(chosenFile?.content)
+    if (chosenFile && chosenFile.content) {
+      setDirtyContent(chosenFile.content)
+    }
   }, [chosenFile])
 
   if (files.length === 0 || !Boolean(chosenFile)) {
@@ -106,7 +108,7 @@ export default function Index() {
       <style jsx>{`
         .workspace-root {
           display: flex;
-          height: 100vh;
+          min-height: 100vh;
           width: 100vw;
           justify-content: space-between;
         }
