@@ -51,7 +51,61 @@ export default function Index() {
   }
 
   return (
-    <div>
+    <div
+      onClick={(e) => {
+        //@ts-ignore
+        if (e.target && e.target.tagName.toLowerCase() !== 'a') {
+          return
+        }
+
+        //@ts-ignore
+        let parentNode = e.target.parentNode
+        let iter = 0
+        while (parentNode.tagName.toLowerCase() !== 'body') {
+          iter += 1
+          parentNode = parentNode.parentNode
+          if (parentNode.classList.contains('ck')) {
+            return
+          }
+          if (iter >= 10) {
+            console.log('circuit breaker: parent finding')
+            break
+          }
+        }
+
+        e.preventDefault()
+        e.stopPropagation()
+
+        //@ts-ignore
+        const href = e.target.href
+          .replace('http://localhost:1338/', '')
+          .replace(/%20/g, ' ')
+        console.log({ href })
+        const isUrlAbsolute = (url) =>
+          url.indexOf('//') === 0
+            ? true
+            : url.indexOf('://') === -1
+            ? false
+            : url.indexOf('.') === -1
+            ? false
+            : url.indexOf('/') === -1
+            ? false
+            : url.indexOf(':') > url.indexOf('/')
+            ? false
+            : url.indexOf('://') < url.indexOf('.')
+            ? true
+            : false
+
+        const isRelativeUrl = !isUrlAbsolute(href)
+        if (isRelativeUrl) {
+          //@ts-ignore
+          setSelectedFileName(href)
+          //@ts-ignore
+          const file = files.find((f) => f.name === href)
+          setChosenFile(file)
+        }
+      }}
+    >
       <Panel
         chosenFile={chosenFile}
         dirtyContent={dirtyContent}
@@ -68,7 +122,7 @@ export default function Index() {
               label: file.name,
             }
           })}
-          defaultValue={{
+          value={{
             value: selectedFileName,
             label: selectedFileName,
           }}
