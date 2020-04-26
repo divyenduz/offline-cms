@@ -156,7 +156,11 @@ export default function Index() {
             width: '50%',
           }}
         >
-          <Preview previewMode={previewMode} dirtyContent={dirtyContent} />
+          <Preview
+            previewMode={previewMode}
+            chosenFile={chosenFile}
+            dirtyContent={dirtyContent}
+          />
         </div>
       </div>
       <style jsx>{`

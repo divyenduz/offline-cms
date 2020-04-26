@@ -8,6 +8,16 @@ const content = html`
       <meta charset="UTF-8" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <title>Future</title>
+      <style>
+        .one {
+          display: block;
+        }
+      </style>
+      <style>
+        .two {
+          display: block;
+        }
+      </style>
     </head>
     <body>
       <ul>
@@ -50,5 +60,10 @@ describe('offline cms', () => {
   it('should prettify after edit', () => {
     const offlineCMS = new OfflineCMS(content)
     expect(offlineCMS.editBody('<p>Hello</p>').prettify()).toMatchSnapshot()
+  })
+
+  it('should get styles', () => {
+    const offlineCMS = new OfflineCMS(content)
+    expect(offlineCMS.getStyles()).toMatchSnapshot()
   })
 })

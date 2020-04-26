@@ -38,6 +38,7 @@ export default async (req, res) => {
 
       return {
         name: f,
+        styles: offlineCMS.getStyles(),
         content: offlineCMS.getBody(),
       }
     })

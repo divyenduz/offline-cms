@@ -1,3 +1,5 @@
+import os from 'os'
+
 import cheerio from 'cheerio'
 import prettier from 'prettier'
 
@@ -19,6 +21,15 @@ export class OfflineCMS {
     console.log(newBody)
     $('body').html(newBody)
     return new OfflineCMS($.html())
+  }
+
+  getStyles() {
+    return this.$('style')
+      .map((_, el) => {
+        return this.$(el).html()
+      })
+      .get()
+      .join(os.EOL)
   }
 
   getShell() {

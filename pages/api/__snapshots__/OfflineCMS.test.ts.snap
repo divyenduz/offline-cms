@@ -5,8 +5,31 @@ exports[`offline cms should edit the body 1`] = `
       <meta charset=\\"UTF-8\\">
       <meta name=\\"viewport\\" content=\\"width=device-width, initial-scale=1.0\\">
       <title>Future</title>
+      <style>
+        .one {
+          display: block;
+        }
+      </style>
+      <style>
+        .two {
+          display: block;
+        }
+      </style>
     </head>
     <body><p>Hello</p></body></html>"
+`;
+
+exports[`offline cms should get styles 1`] = `
+"
+        .one {
+          display: block;
+        }
+      
+
+        .two {
+          display: block;
+        }
+      "
 `;
 
 exports[`offline cms should prettify 1`] = `
@@ -16,6 +39,16 @@ exports[`offline cms should prettify 1`] = `
     <meta charset=\\"UTF-8\\" />
     <meta name=\\"viewport\\" content=\\"width=device-width, initial-scale=1.0\\" />
     <title>Future</title>
+    <style>
+      .one {
+        display: block;
+      }
+    </style>
+    <style>
+      .two {
+        display: block;
+      }
+    </style>
   </head>
   <body>
     <ul>
@@ -37,6 +70,16 @@ exports[`offline cms should prettify after edit 1`] = `
     <meta charset=\\"UTF-8\\" />
     <meta name=\\"viewport\\" content=\\"width=device-width, initial-scale=1.0\\" />
     <title>Future</title>
+    <style>
+      .one {
+        display: block;
+      }
+    </style>
+    <style>
+      .two {
+        display: block;
+      }
+    </style>
   </head>
   <body>
     <p>Hello</p>
@@ -64,6 +107,16 @@ exports[`offline cms should return the content 1`] = `
       <meta charset=\\"UTF-8\\">
       <meta name=\\"viewport\\" content=\\"width=device-width, initial-scale=1.0\\">
       <title>Future</title>
+      <style>
+        .one {
+          display: block;
+        }
+      </style>
+      <style>
+        .two {
+          display: block;
+        }
+      </style>
     </head>
     <body>
       <ul>
@@ -83,6 +136,16 @@ exports[`offline cms should return the shell 1`] = `
       <meta charset=\\"UTF-8\\">
       <meta name=\\"viewport\\" content=\\"width=device-width, initial-scale=1.0\\">
       <title>Future</title>
+      <style>
+        .one {
+          display: block;
+        }
+      </style>
+      <style>
+        .two {
+          display: block;
+        }
+      </style>
     </head>
     <body></body></html>"
 `;

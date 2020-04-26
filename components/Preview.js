@@ -1,4 +1,6 @@
-export default function Preview({ previewMode, dirtyContent }) {
+// import css from 'styled-jsx/css'
+
+export default function Preview({ previewMode, chosenFile, dirtyContent }) {
   if (previewMode === 'emulated') {
     return (
       <>
@@ -6,28 +8,13 @@ export default function Preview({ previewMode, dirtyContent }) {
           className={'preview-container'}
           dangerouslySetInnerHTML={{ __html: dirtyContent }}
         ></div>
-        <style jsx>
-          {`
-            .preview-container {
-              /* body */
-              padding-left: 50px;
-              padding-right: 50px;
-              margin: 0;
-              /* html */
-              cursor: default;
-              font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu,
-                Cantarell, Noto Sans, sans-serif, Apple Color Emoji,
-                Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
-              line-height: 1.15;
-              -moz-tab-size: 4;
-              -o-tab-size: 4;
-              tab-size: 4;
-              -ms-text-size-adjust: 100%;
-              -webkit-text-size-adjust: 100%;
-              word-break: break-word;
-            }
-          `}
-        </style>
+        <style dangerouslySetInnerHTML={{ __html: chosenFile.styles }}></style>
+        <style jsx>{`
+          .preview-container {
+            padding-left: 20px;
+            padding-right: 20px;
+          }
+        `}</style>
       </>
     )
   } else if (previewMode === 'live') {
