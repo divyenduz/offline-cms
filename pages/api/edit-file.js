@@ -3,8 +3,7 @@
 import fs from 'fs'
 import path from 'path'
 
-import cheerio from 'cheerio'
-import prettier from 'prettier'
+import { OfflineCMS } from './OfflineCMS'
 
 const workingDirectory = process.cwd()
 
@@ -13,12 +12,10 @@ export default async (req, res) => {
     const { name, content } = req.body
     const filePath = path.join(workingDirectory, name)
     const existingContent = fs.readFileSync(filePath, 'utf8')
-    const $ = cheerio.load(existingContent)
-    $('body').html(content)
-    const newContent = prettier.format($.html(), {
-      parser: 'html',
-    })
-    fs.writeFileSync(filePath, newContent)
+
+    const offlineCMS = new OfflineCMS(existingContent).editBody(content)
+
+    fs.writeFileSync(filePath, offlineCMS.prettify())
     res.status(200).json({ message: 'Done' })
   } else {
     res.status(200).json({ message: 'Method not supported' })
