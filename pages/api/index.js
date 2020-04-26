@@ -5,6 +5,7 @@ import path from 'path'
 import os from 'os'
 
 import glob from 'glob'
+import { OfflineCMS } from './OfflineCMS'
 
 const workingDirectory = process.cwd()
 
@@ -32,9 +33,12 @@ export default async (req, res) => {
     // TODO: This sort migth be expensive
     .sort((a, b) => a.split('/').length - b.split('/').length)
     .map((f) => {
+      const content = fs.readFileSync(f, 'utf8')
+      const offlineCMS = new OfflineCMS(content)
+
       return {
         name: f,
-        content: fs.readFileSync(f, 'utf8'),
+        content: offlineCMS.getBody(),
       }
     })
   res.status(200).json({ files })
