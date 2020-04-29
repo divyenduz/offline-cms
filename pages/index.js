@@ -6,6 +6,7 @@ import Editor from '../components/Editor'
 import Select from 'react-select'
 
 export default function Index() {
+  const [empty, setEmpty] = useState(false)
   const [files, setFiles] = useState([])
   const [revision, setRevision] = useState(0)
 
@@ -25,15 +26,26 @@ export default function Index() {
 
     if (selectedFileName) {
       const chosenFile = data.files.find((f) => f.name === selectedFileName)
-      setSelectedFileName(chosenFile.name)
-      setChosenFile(chosenFile)
+      if (chosenFile) {
+        setSelectedFileName(chosenFile.name)
+        setChosenFile(chosenFile)
+      } else {
+        console.log(
+          `Error: unable to find the selected file ${selectedFileName}`,
+        )
+      }
       return
     }
 
     // TODO: Handle case when there are 0 html files
     const chosenFile = data.files[0]
-    setSelectedFileName(chosenFile.name)
-    setChosenFile(chosenFile)
+    if (chosenFile) {
+      setSelectedFileName(chosenFile.name)
+      setChosenFile(chosenFile)
+    } else {
+      setEmpty(true)
+      console.log(`Error: unable to find any HTML files in the given folder`)
+    }
   }
 
   useEffect(() => {
@@ -45,6 +57,10 @@ export default function Index() {
       setDirtyContent(chosenFile.content)
     }
   }, [chosenFile])
+
+  if (empty) {
+    return <div>No HTML files found</div>
+  }
 
   if (files.length === 0 || !Boolean(chosenFile)) {
     return <div>Loading...</div>
@@ -108,6 +124,8 @@ export default function Index() {
     >
       <Panel
         chosenFile={chosenFile}
+        setChosenFile={setChosenFile}
+        setSelectedFileName={setSelectedFileName}
         dirtyContent={dirtyContent}
         // TODO: Do we even need revision?
         revision={revision}
