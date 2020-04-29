@@ -9,6 +9,19 @@ const content = html`
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <title>Future</title>
       <style>
+        html {
+          display: block;
+        }
+
+        html,
+        body {
+          display: block;
+        }
+
+        body {
+          display: block;
+        }
+
         .one {
           display: block;
         }

@@ -1,15 +1,15 @@
-//@ts-check
-
 import fs from 'fs'
 import path from 'path'
 import os from 'os'
 
 import glob from 'glob'
+import { NextApiRequest, NextApiResponse } from 'next'
+
 import { OfflineCMS } from './OfflineCMS'
 
 const workingDirectory = process.cwd()
 
-export default async (req, res) => {
+export default async (req: NextApiRequest, res: NextApiResponse) => {
   res.statusCode = 200
   res.setHeader('Content-Type', 'application/json')
 
