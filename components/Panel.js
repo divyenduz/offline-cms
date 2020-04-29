@@ -79,6 +79,7 @@ export default function Panel({
       </div>
       <style jsx>{`
         .panel-root {
+          z-index: 1000;
           width: 100%;
           height: 50px;
           position: fixed;

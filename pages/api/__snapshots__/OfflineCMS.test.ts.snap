@@ -6,6 +6,19 @@ exports[`offline cms should edit the body 1`] = `
       <meta name=\\"viewport\\" content=\\"width=device-width, initial-scale=1.0\\">
       <title>Future</title>
       <style>
+        html {
+          display: block;
+        }
+
+        html,
+        body {
+          display: block;
+        }
+
+        body {
+          display: block;
+        }
+
         .one {
           display: block;
         }
@@ -20,16 +33,21 @@ exports[`offline cms should edit the body 1`] = `
 `;
 
 exports[`offline cms should get styles 1`] = `
-"
-        .one {
-          display: block;
-        }
-      
+".preview-container {
+  display: block;
+}
 
-        .two {
-          display: block;
-        }
-      "
+.preview-container {
+  display: block;
+}
+
+.one {
+  display: block;
+}
+
+.two {
+  display: block;
+}"
 `;
 
 exports[`offline cms should prettify 1`] = `
@@ -40,6 +58,19 @@ exports[`offline cms should prettify 1`] = `
     <meta name=\\"viewport\\" content=\\"width=device-width, initial-scale=1.0\\" />
     <title>Future</title>
     <style>
+      html {
+        display: block;
+      }
+
+      html,
+      body {
+        display: block;
+      }
+
+      body {
+        display: block;
+      }
+
       .one {
         display: block;
       }
@@ -71,6 +102,19 @@ exports[`offline cms should prettify after edit 1`] = `
     <meta name=\\"viewport\\" content=\\"width=device-width, initial-scale=1.0\\" />
     <title>Future</title>
     <style>
+      html {
+        display: block;
+      }
+
+      html,
+      body {
+        display: block;
+      }
+
+      body {
+        display: block;
+      }
+
       .one {
         display: block;
       }
@@ -108,6 +152,19 @@ exports[`offline cms should return the content 1`] = `
       <meta name=\\"viewport\\" content=\\"width=device-width, initial-scale=1.0\\">
       <title>Future</title>
       <style>
+        html {
+          display: block;
+        }
+
+        html,
+        body {
+          display: block;
+        }
+
+        body {
+          display: block;
+        }
+
         .one {
           display: block;
         }
@@ -137,6 +194,19 @@ exports[`offline cms should return the shell 1`] = `
       <meta name=\\"viewport\\" content=\\"width=device-width, initial-scale=1.0\\">
       <title>Future</title>
       <style>
+        html {
+          display: block;
+        }
+
+        html,
+        body {
+          display: block;
+        }
+
+        body {
+          display: block;
+        }
+
         .one {
           display: block;
         }

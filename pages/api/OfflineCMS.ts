@@ -2,6 +2,7 @@ import os from 'os'
 
 import cheerio from 'cheerio'
 import prettier from 'prettier'
+import { CSSManager } from './CSSManager'
 
 export class OfflineCMS {
   private readonly $: CheerioStatic
@@ -18,18 +19,20 @@ export class OfflineCMS {
 
   editBody(newBody) {
     const $ = this._getClone() // Clone it
-    console.log(newBody)
     $('body').html(newBody)
     return new OfflineCMS($.html())
   }
 
   getStyles() {
-    return this.$('style')
+    const style = this.$('style')
       .map((_, el) => {
         return this.$(el).html()
       })
       .get()
       .join(os.EOL)
+
+    const cssManager = new CSSManager(style)
+    return cssManager.getCSS()
   }
 
   getShell() {
