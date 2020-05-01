@@ -112,8 +112,10 @@ export default function Index() {
             ? true
             : false
 
-        const isRelativeUrl = !isUrlAbsolute(href)
-        if (isRelativeUrl) {
+        const isAbsolute = isUrlAbsolute(href)
+        if (isAbsolute) {
+          window.open(href, '_blank')
+        } else {
           //@ts-ignore
           setSelectedFileName(href)
           //@ts-ignore
