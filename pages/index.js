@@ -93,9 +93,14 @@ export default function Index() {
         e.stopPropagation()
 
         //@ts-ignore
-        const href = e.target.href
+        let href = e.target.href
           .replace('http://localhost:1338/', '')
           .replace(/%20/g, ' ')
+
+        if (!href.endsWith('.html')) {
+          href = href + 'index.html'
+        }
+
         console.log({ href })
         const isUrlAbsolute = (url) =>
           url.indexOf('//') === 0

@@ -15,7 +15,7 @@ export default async (req, res) => {
 
     const offlineCMS = new OfflineCMS(existingContent).editBody(content)
 
-    fs.writeFileSync(filePath, offlineCMS.prettify())
+    fs.writeFileSync(filePath, offlineCMS.getContent())
     res.status(200).json({ message: 'Done' })
   } else {
     res.status(200).json({ message: 'Method not supported' })
