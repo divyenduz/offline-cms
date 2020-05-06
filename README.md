@@ -40,6 +40,7 @@ All contributions (code, docs, issue creation) are welcomed 🙏
 
 1. https://github.com/ericclemmons/codelift
 1. https://divjoy.com/
+1. https://tinacms.org/guides/nextjs/github-open-authoring/initial-setup
 
 # License 
 
