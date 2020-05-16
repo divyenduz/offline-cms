@@ -41,6 +41,11 @@ All contributions (code, docs, issue creation) are welcomed 🙏
 1. https://github.com/ericclemmons/codelift
 1. https://divjoy.com/
 1. https://tinacms.org/guides/nextjs/github-open-authoring/initial-setup
+1. https://getgrav.org/
+1. https://www.bludit.com/
+1. https://getpublii.com/
+1. http://picocms.org/
+1. https://forestry.io/ (founders of tinacms.org)
 
 # License 
 
